@@ -1,0 +1,38 @@
+import { red } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
+
+// A custom theme for this app
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#F7C14C"
+    },
+    secondary: {
+      main: "#19857b"
+    },
+    error: {
+      main: red.A400
+    }
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          "&:hover": {
+            boxShadow: "none"
+          }
+        }
+      }
+    }
+    // MuiButtonBase: {
+    //   styleOverrides: {
+    //     root: {
+    //       boxShadow: "none"
+    //     }
+    //   }
+    // }
+  }
+});
+
+export default theme;
