@@ -7,14 +7,11 @@ const Wrapper = styled("div")({
   flexDirection: "column"
 });
 
-export function LayoutDefault({ children, withFooter }) {
+export function LayoutDefault({ children }) {
   return (
     <Wrapper>
       <Header />
       {children}
-      {/* <Main /> */}
-      {withFooter === true && <footer>Hello from footer</footer>}
-      {/* <Footer /> */}
     </Wrapper>
   );
 }
