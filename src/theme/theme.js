@@ -24,13 +24,6 @@ const theme = createTheme({
         },
       },
     },
-    // MuiButtonBase: {
-    //   styleOverrides: {
-    //     root: {
-    //       boxShadow: "none"
-    //     }
-    //   }
-    // }
   },
 });
 

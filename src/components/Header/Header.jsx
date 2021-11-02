@@ -1,17 +1,29 @@
-import * as React from "react";
-import { Link } from "@mui/material";
-import { styled } from "@mui/material";
+import * as React from 'react';
 
-const Wrapper = styled("div")({
-  display: "flex",
-  marginTop: 16,
-  marginLeft: 8,
-  marginRight: 8,
-  justifyContent: "flex-end"
-});
+import { styled } from '@mui/material';
 
-export function Header() {
-  return <Wrapper >
-    <Link>Just want to Pay</Link>
-    </Wrapper>;
+export function Header({ children }) {
+  const Wrapper = styled('div')({
+    display: 'flex',
+    marginTop: 24,
+    marginLeft: 16,
+    marginRight: 16,
+  });
+
+  let direction;
+  if (children.props.children.length <= 4) {
+    direction = 'flex-start';
+  } else {
+    direction = 'flex-end';
+  }
+
+  return (
+    <Wrapper
+      sx={{
+        justifyContent: direction,
+      }}
+    >
+      {children}
+    </Wrapper>
+  );
 }

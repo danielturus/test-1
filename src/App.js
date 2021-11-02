@@ -1,59 +1,40 @@
 import * as React from 'react';
 
-import { Box, Container, Typography } from '@mui/material';
-import { CardAddon } from './components/Card/CardAddon';
 import { LayoutDefault } from './components/LayoutDefault/LayoutDefault';
+import { LayoutReview } from './components/LayoutReview/LayoutReview';
+import { Header } from './components/Header/Header';
+import { styled, Link } from '@mui/material';
+
+const Wrapper = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '100vh',
+});
 
 export default function App() {
-  const firstCard = {
-    title: 'Early Checkin',
-    price: '$15 Per Stay',
-    description:
-      'Checkin anytime from 9am on the day your booking starts. Normal checkin is 3pm',
-  };
-
-  const secondCard = {
-    title: 'Late Checkout',
-    price: '$15 Per Stay',
-    description:
-      'Checkout as late as 3pm on your last day with us. Normally 10am.',
-  };
-
-  const thirdCard = {
-    title: 'Early Checkin',
-    price: '$65 Per Stay',
-    description:
-      'Enjoy breakfast in out gourmet breakfast bar every day from 7am - 11am thoughout your booking.',
-  };
+  const [isReview, setIsReview] = React.useState(false);
 
   return (
-    <LayoutDefault>
-      <Container>
-        <Box mt={2}>
-          <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
-            Treat yourself?
-          </Typography>
-          <Typography>
-            Before you pay we thought the following add-ons might interest you.
-          </Typography>
-        </Box>
-
-        <CardAddon
-          title={firstCard.title}
-          price={firstCard.price}
-          description={firstCard.description}
-        />
-        <CardAddon
-          title={secondCard.title}
-          price={secondCard.price}
-          description={secondCard.description}
-        />
-        <CardAddon
-          title={thirdCard.title}
-          price={thirdCard.price}
-          description={thirdCard.description}
-        />
-      </Container>
-    </LayoutDefault>
+    <Wrapper>
+      {isReview ? (
+        <>
+          <Header>
+            <Link onClick={() => setIsReview(false)} color="#222222">
+              Back
+            </Link>
+          </Header>
+          <LayoutReview />
+        </>
+      ) : (
+        <>
+          <Header>
+            <Link onClick={() => setIsReview(true)} color="#5B73FF">
+              Just want to Pay
+            </Link>
+          </Header>
+          <LayoutDefault />
+        </>
+      )}
+    </Wrapper>
   );
 }
