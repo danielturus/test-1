@@ -7,7 +7,7 @@ export function LayoutReview() {
     <Container
       sx={{ display: 'flex', flexDirection: 'column', minHeight: '90%' }}
     >
-      <Box mt={3}>
+      <Box mt={6}>
         <Typography variant="h5" sx={{ fontWeight: 'bold' }}>
           Review Booking
         </Typography>
@@ -17,8 +17,8 @@ export function LayoutReview() {
       </Box>
 
       <Box
-        mb={2}
-        mt={3}
+        mb={4}
+        mt={6}
         display="flex"
         flexDirection="row"
         justifyContent="space-between"
@@ -34,20 +34,20 @@ export function LayoutReview() {
           borderRadius: 2,
         }}
       >
-        <Box m={2} display="flex" flexDirection="row">
+        <Box m={4} display="flex" flexDirection="row">
           <Typography color="gray" flexGrow="1">1x</Typography>
           <Link color="#808080" flexGrow="5">Pigalle Bunk</Link>
           <Typography color="gray">£480</Typography>
         </Box>
 
-        <Box m={2} display="flex" flexDirection="row">
+        <Box m={4} display="flex" flexDirection="row">
           <Typography color="gray" flexGrow="1">1x</Typography>
           <Link color="#808080" flexGrow="5">Pigalle Bunk</Link>
           <Typography color="gray">£480</Typography>
         </Box>
       </Paper>
 
-      <Box mt={3}>
+      <Box mt={6}>
         <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
           Totals
         </Typography>
@@ -59,9 +59,9 @@ export function LayoutReview() {
         }}
       >
         <Box
-          mx={2}
-          mt={2}
-          mb={1}
+          mx={4}
+          mt={4}
+          mb={2}
           display="flex"
           flexDirection="row"
           justifyContent="space-between"
@@ -72,8 +72,8 @@ export function LayoutReview() {
         </Box>
 
         <Box
-          mx={2}
-          mb={1}
+          mx={4}
+          mb={2}
           display="flex"
           flexDirection="row"
           justifyContent="space-between"
@@ -84,7 +84,7 @@ export function LayoutReview() {
         </Box>
 
         <Box
-          mx={2}
+          mx={4}
           display="flex"
           flexDirection="row"
           justifyContent="space-between"
@@ -105,13 +105,13 @@ export function LayoutReview() {
         }}
       >
         <Link color="#222222" >Pay with Card</Link>
-        <Box my={1} width="100%">
+        <Box my={2} width="100%">
           <Button
             variant="contained"
             color="primary"
             fullWidth
             sx={{
-              mb: 2,
+              mb: 4,
               borderRadius: 1,
               textTransform: 'none',
             }}

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { LayoutDefault } from './components/LayoutDefault/LayoutDefault';
-import { LayoutReview } from './components/LayoutReview/LayoutReview';
+import { LayoutDefault, LayoutReview } from './components';
 import { Header } from './components/Header/Header';
 import { styled, Link } from '@mui/material';
 
@@ -27,7 +26,7 @@ export default function App() {
         </>
       ) : (
         <>
-          <Header>
+          <Header sx={{ justifyContent: 'flex-end' }}>
             <Link onClick={() => setIsReview(true)} color="#5B73FF">
               Just want to Pay
             </Link>

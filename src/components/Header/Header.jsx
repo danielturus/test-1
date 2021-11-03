@@ -2,28 +2,18 @@ import * as React from 'react';
 
 import { styled } from '@mui/material';
 
-export function Header({ children }) {
-  const Wrapper = styled('div')({
+const test = ({theme}) => {
+  return {
     display: 'flex',
-    marginTop: 24,
-    marginLeft: 16,
-    marginRight: 16,
-  });
+    marginTop: theme.spacing(6),
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
+    justifyContent: 'space-between',
+  };
+};
 
-  let direction;
-  if (children.props.children.length <= 4) {
-    direction = 'flex-start';
-  } else {
-    direction = 'flex-end';
-  }
+export function Header({ children, sx }) {
+  const Wrapper = styled('div')(test);
 
-  return (
-    <Wrapper
-      sx={{
-        justifyContent: direction,
-      }}
-    >
-      {children}
-    </Wrapper>
-  );
+  return <Wrapper sx={sx}>{children}</Wrapper>;
 }

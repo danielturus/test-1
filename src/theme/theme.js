@@ -2,6 +2,7 @@ import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  spacing: 4,
   palette: {
     primary: {
       main: '#F7C14C',
