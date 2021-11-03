@@ -1,17 +1,19 @@
-import * as React from "react";
-import { Link } from "@mui/material";
-import { styled } from "@mui/material";
+import * as React from 'react';
 
-const Wrapper = styled("div")({
-  display: "flex",
-  marginTop: 16,
-  marginLeft: 8,
-  marginRight: 8,
-  justifyContent: "flex-end"
-});
+import { styled } from '@mui/material';
 
-export function Header() {
-  return <Wrapper >
-    <Link>Just want to Pay</Link>
-    </Wrapper>;
+const test = ({theme}) => {
+  return {
+    display: 'flex',
+    marginTop: theme.spacing(6),
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
+    justifyContent: 'space-between',
+  };
+};
+
+export function Header({ children, sx }) {
+  const Wrapper = styled('div')(test);
+
+  return <Wrapper sx={sx}>{children}</Wrapper>;
 }
